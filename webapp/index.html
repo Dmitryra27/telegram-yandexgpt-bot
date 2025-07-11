@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>WebApp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>WebApp c  YandexGPT Chat</h1>
+<textarea id="prompt" placeholder="Введите ваш запрос..."></textarea>
+<button onclick="send()">Отправить</button>
+<p id="response"></p>
+
+<script src="https://telegram.org/js/telegram-web-app.js "></script>
+<script>
+    async function send() {
+        const prompt = document.getElementById('prompt').value;
+        const res = await fetch('/api/generate?prompt=' + encodeURIComponent(prompt));
+        const text = await res.text();
+        document.getElementById('response').innerText = text;
+    }
+</script>
+</body>
+</html>
