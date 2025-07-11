@@ -1,3 +1,4 @@
+import gunicorn
 from flask import Flask, request, Response
 from ai.yandex_gpt import generate_text
 
@@ -9,8 +10,13 @@ def generate():
     prompt = request.args.get('prompt')
     if not prompt:
         return "Нет запроса", 400
-    response = generate_text(prompt)
-    return Response(response, content_type='text/html')
+    try:
+        response = generate_text(prompt)
+        return Response(response, content_type='text/html; charset=utf-8')
+
+    except Exception as e:
+        print("Ошибка при генерации текста:", str(e))
+        return "Ошибка сервера", 500
 
 
 
@@ -23,3 +29,4 @@ def home():
 if __name__ == '__main__':
     #app.run()# локально
     app.run(host='0.0.0.0', port=8080)# на хостинге
+
