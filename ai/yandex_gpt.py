@@ -14,7 +14,7 @@ def generate_text(prompt: str) -> str:
     }
 
     data = {
-        "modelUri": f"gpt://{FOLDER_ID}/yandexgpt-lite",
+        "modelUri": f"gpt://{FOLDER_ID}/yandexgpt",
         "completionOptions": {
             "stream": False,
             "temperature": 0.6,
@@ -29,7 +29,7 @@ def generate_text(prompt: str) -> str:
     }
 
     response = requests.post(
-        "https://llm.api.cloud.yandex.net/foundationModels/v1/completion ",
+        "https://llm.api.cloud.yandex.net/foundationModels/v1/completion",
         headers=headers,
         json=data
     )
