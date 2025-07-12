@@ -1,4 +1,4 @@
-import gunicorn
+
 from flask import Flask, request, Response
 from ai.yandex_gpt import generate_text
 
@@ -29,6 +29,9 @@ def home():
 def api():
     return f"<p>Это API </p>"
 
+@app.route('/favicon')
+def favicon():
+    return f"<p>Это favicon </p>"
 
 if __name__ == '__main__':
     #app.run()# локально
