@@ -1,32 +1,23 @@
-# Telegram Бот с YandexGPT и WebApp интерфейсом
+---
+title: Flask
+description: A popular minimal server framework for Python
+tags:
+  - python
+  - flask
+---
 
-Этот проект — Telegram-бот с поддержкой YandexGPT и WebApp интерфейсом внутри Telegram. 
-Можно развернуть на [Railway](https://railway.app ).
+# Python Flask Example
 
-## Установка
+This is a [Flask](https://flask.palletsprojects.com/en/1.1.x/) app that serves a simple JSON response.
 
-### Через Railway:
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/-izhsc_PGdt)
 
-1. Перейди на [railway.app/project/new](https://railway.app/project/new )
-2. Выбери свой GitHub-репозиторий или загрузи ZIP
-3. Добавь переменные окружения:
-    - `TELEGRAM_BOT_TOKEN` – токен Telegram-бота
-    - `YANDEX_API_KEY` – ключ от Yandex Cloud
-    - `YANDEX_FOLDER_ID` – ID папки в Yandex Cloud
-4. Бот будет доступен через Telegram
+## ✨ Features
 
-### Через GitHub:
+- Python
+- Flask
 
-1. Создай новый репозиторий на GitHub
-2. Закоммить все файлы из этого проекта
-3. Подключи к Railway через GitHub
-4. Добавь переменные окружения
+## 💁‍♀️ How to use
 
-## Использование
-
-- `/start` – откроет WebApp интерфейс
-- Любой текст – отправит запрос в YandexGPT и получит ответ
-
-## Лицензия
-
-MIT
+- Install Python requirements `pip install -r requirements.txt`
+- Start the server for development `python3 main.py`
