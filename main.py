@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
-WEBAPP_URL = os.getenv("WEBAPP_URL", "harmonious-charisma-production.up.railway.app")
+WEBAPP_URL = os.getenv("harmonious-charisma-production.up.railway.app", "harmonious-charisma-production.up.railway.app")
 
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
